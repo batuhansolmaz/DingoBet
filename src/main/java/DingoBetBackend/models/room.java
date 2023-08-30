@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Getter
@@ -13,22 +15,24 @@ public class room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "room_id")
     private Integer id;
 
+    @Column(name = "room_name")
     private String name;
-    private String description;
 
-    @Column(name = "room_type")
-    private String roomType;
-
-    /*@ManyToMany
+    @ManyToMany
     @JoinTable(
             name = "room_user",
             joinColumns = @JoinColumn(name = "room_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    private List<User> users ;*/
+    private Set<user> users = new HashSet<>();
 
+    @OneToMany(mappedBy = "room")
+    private Set<bet> bets = new HashSet<>();
 
+    @OneToMany(mappedBy = "room")
+    private Set<score> scores = new HashSet<>();
 
 }
