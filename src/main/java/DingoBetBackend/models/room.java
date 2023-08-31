@@ -16,7 +16,7 @@ public class room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room_id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "room_name")
     private String name;

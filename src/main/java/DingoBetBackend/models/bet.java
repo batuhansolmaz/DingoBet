@@ -13,7 +13,7 @@ public class bet {
     @Id
     @GeneratedValue
     @Column(name = "bet_id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "bet_score")
     private Integer betScore;

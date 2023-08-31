@@ -14,7 +14,7 @@ import lombok.Setter;
 public class match {
     @Id
     @Column(name = "match_id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "match_home_team")
     private String homeTeam;
@@ -29,6 +29,6 @@ public class match {
     private Integer awayScore;
 
     @OneToOne(mappedBy = "match")
-    private bet bet;
+    private DingoBetBackend.models.bet bet;
 
 }

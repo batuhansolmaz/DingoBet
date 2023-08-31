@@ -3,7 +3,6 @@ package DingoBetBackend.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 
 import java.util.List;
 
@@ -16,7 +15,7 @@ public class user {
     @Id
     @GeneratedValue
     @Column(name = "user_id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "user_name")
     private String name;
