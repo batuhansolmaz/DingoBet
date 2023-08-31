@@ -32,4 +32,5 @@ public class scoreService {
     public List<score> getAllScores() {
         return scoreRepository.findAll();
     }
+
 }

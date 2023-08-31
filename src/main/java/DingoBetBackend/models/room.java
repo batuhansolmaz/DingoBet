@@ -21,12 +21,10 @@ public class room {
     @Column(name = "room_name")
     private String name;
 
-    @ManyToMany
-    @JoinTable(
-            name = "room_user",
-            joinColumns = @JoinColumn(name = "room_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id")
-    )
+    @ManyToMany(mappedBy = "adminRooms")
+    private Set<user> adminUsers = new HashSet<>();
+
+    @ManyToMany(mappedBy = "rooms")
     private Set<user> users = new HashSet<>();
 
     @OneToMany(mappedBy = "room")

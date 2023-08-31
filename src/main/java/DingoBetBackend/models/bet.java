@@ -49,7 +49,7 @@ public class bet {
         }
     }
 
-    // Calculate betScore based on homeScore and awayScore
+    // Calculate betScorebet based on homeScore and awayScore
     public int calculateBetScoreBasedOnRules(int actualHomeScore, int actualAwayScore) {
         return 10 - Math.abs(homeBet - actualHomeScore) + Math.abs(awayBet - actualAwayScore);
     }

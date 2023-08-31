@@ -20,8 +20,21 @@ public class user {
     @Column(name = "user_name")
     private String name;
 
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany
+    @JoinTable(
+            name = "user_room",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "room_id")
+    )
     private List<room> rooms;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_admin_room",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "room_id")
+    )
+    private List<room> adminRooms;
 
     @OneToMany(mappedBy = "user")
     private List<bet> bets;
