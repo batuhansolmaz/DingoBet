@@ -1,5 +1,6 @@
 package DingoBetBackend.services;
 
+import DingoBetBackend.models.room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import DingoBetBackend.models.user;
@@ -11,6 +12,7 @@ import java.util.List;
 public class userService {
 
     private final userRepository userRepository;
+    @Autowired private roomService roomService;
 
     @Autowired
     public userService(userRepository userRepository) {
@@ -32,4 +34,11 @@ public class userService {
     public List<user> getAllUsers() {
         return userRepository.findAll();
     }
+
+    public user getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+
+
 }

@@ -22,14 +22,14 @@ public class matchService {
         return matchRepository.findById(id).orElse(null);
     }
 
-    public match saveBet(match match) {
+    public match saveMatch(match match) {
         return matchRepository.save(match);
     }
 
-    public void deleteBetById(Long id) {
+    public void deleteMatchById(Long id) {
         matchRepository.deleteById(id);
     }
-    public List<match> getAllBets() {
+    public List<match> getAllMatches() {
         return matchRepository.findAll();
     }
 

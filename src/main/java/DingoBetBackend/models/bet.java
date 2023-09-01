@@ -41,6 +41,7 @@ public class bet {
     public void calculateBetScore() {
         if (homeBet != null && awayBet != null && match != null) {
 
+
             int actualHomeScore = match.getHomeScore();
             int actualAwayScore = match.getAwayScore();
 
